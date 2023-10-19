@@ -14,12 +14,27 @@ const ProductDetail = () => {
         .then(data => setProduct(data))
     },[])
 
+    const handleClick = () => {
+        console.log("hello world");
+
+        fetch("http://localhost:5144/Cart", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(product),
+		})
+			.then((res) => res.json())
+			.then((data) => console.log(data));
+        
+    }
+
     
     return (
         <div>
             <img src={imageUrl} alt="" />
             <p>{ShortDescription}</p>
-            <button className='btn '> Add to cart</button>
+            <button onClick={handleClick} className='btn '> Add to cart</button>
         </div>
     );
 };

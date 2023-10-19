@@ -1,14 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../MainLayout/MainLayout";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-// import Home from "../Pages/MyCart/Home/Home";
 import AddProduct from "../Pages/AddProduct/AddProduct";
-import MyCart from "../Pages/MyCart/MyCart";
 import Login from "../Pages/Login/Login";
 import Products from "../Pages/Products/Products";
 import Home from "../Pages/Home/Home";
 import ProductDetail from "../Pages/ProductDetail/ProductDetail";
 import UpdateProduct from "../MainLayout/UpdateProduct/UpdateProduct";
+import Carts from "../Pages/MyCart/Carts";
 
 export const router = createBrowserRouter([
 	{
@@ -26,7 +25,7 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: "/cart",
-				element: <MyCart> </MyCart>,
+				element: <Carts></Carts>
 			},
 			{
 				path: "/login",
