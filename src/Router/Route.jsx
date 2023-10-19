@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import Products from "../Pages/Products/Products";
 import Home from "../Pages/Home/Home";
 import ProductDetail from "../Pages/ProductDetail/ProductDetail";
+import UpdateProduct from "../MainLayout/UpdateProduct/UpdateProduct";
 
 export const router = createBrowserRouter([
 	{
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
 			{
 				path: "/:Name/:id",
 				element: <ProductDetail></ProductDetail>,
+			},
+			{
+				path: "/:Name/update/:id",
+				element: <UpdateProduct></UpdateProduct>
 			},
 		],
 	},

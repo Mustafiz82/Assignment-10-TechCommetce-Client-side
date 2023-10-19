@@ -69,19 +69,14 @@ const AddProduct = () => {
 						<option value="Intel">Intel</option>
 						<option value="LG">LG</option>
 					</select>
-
 					<span>Product Type</span>
-					<select
-						name="Type"
-						className="select select-ghost w-full input-bordered"
-						id=""
-					>
-						<option value="Phone">Phone</option>
-						<option value="Laptop">Laptop</option>
-						<option value="Television">Television</option>
-						<option value="HeadPhone">HeadPhone</option>
-						<option value="fridge">fridge</option>
-					</select>
+
+					<input
+						type="Text"
+						name="Price"
+						placeholder="Mobile / Laptop / etc"
+						className="input input-bordered w-full"
+					/>
 
 					<span>Price</span>
 					<input
@@ -106,7 +101,6 @@ const AddProduct = () => {
 						<option value="5">5 star</option>
 					</select>
 					{/* <h1>product Rating:</h1> */}
-					
 				</div>
 				<span>Short Decription</span>
 				<textarea

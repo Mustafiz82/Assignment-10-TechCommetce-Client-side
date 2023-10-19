@@ -49,7 +49,7 @@ const Product = ({ item }) => {
                     </div>
                     <div className="flex gap-5">
                         <Link to={`${_id}`}><button className="btn flex-1 btn-primary"> Details</button></Link>
-                        <Link to=""><button className="btn flex-1 btn-primary"> Update</button></Link>
+                        <Link to={`update/${_id}`}><button className="btn flex-1 btn-primary"> Update</button></Link>
                     </div>
 					
 				</div>
