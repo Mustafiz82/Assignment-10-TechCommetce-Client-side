@@ -4,22 +4,22 @@ const AddProduct = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const form = e.target;
-		const name = form.Name.value;
-		const Brand = form.Brand.value;
+		const ProductName = form.Name.value;
+		const BrandName = form.Brand.value;
 		const Type = form.Type.value;
 		const ImageUrl = form.ImageUrl.value;
 		const Price = form.Price.value;
-		const Description = form.Description.value;
-		const Rating = form.Rating.value;
+		const ShortDescription = form.Description.value;
+		const ProductRating = form.Rating.value;
 
 		const formData = {
-			Rating,
+			ProductRating,
 			Type,
-			name,
-			Brand,
+			ProductName,
+			BrandName,
 			ImageUrl,
 			Price,
-			Description,
+			ShortDescription,
 		};
 		console.log(formData);
 
@@ -73,7 +73,7 @@ const AddProduct = () => {
 
 					<input
 						type="Text"
-						name="Price"
+						name="Type"
 						placeholder="Mobile / Laptop / etc"
 						className="input input-bordered w-full"
 					/>

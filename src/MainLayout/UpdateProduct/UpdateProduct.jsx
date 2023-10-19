@@ -16,7 +16,6 @@ const UpdateProduct = () => {
 		Type,
 		imageUrl,
 		_id,
-        
 	} = product;
 
 	console.log(Rating);
@@ -37,7 +36,6 @@ const UpdateProduct = () => {
 		const Price = form.Price.value;
 		const Description = form.Description.value;
 		const Rating = form.Rating.value;
-        
 
 		const formData = {
 			Rating,
@@ -49,9 +47,18 @@ const UpdateProduct = () => {
 			Description,
 		};
 		console.log(formData);
+
+		fetch(`http://localhost:5144/products/${id}`, {
+			method: "PUT",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(formData),
+		})
+			.then((res) => res.json())
+			.then((data) => console.log(data));
 	};
 
-    
 	// document.getElementById("BrandSelect").value = BrandName
 	// document.getElementById("RatingSelect").value =Rating
 	// console.log(BrandSelect);
@@ -95,7 +102,9 @@ const UpdateProduct = () => {
 							Apple
 						</option>
 						<option
-							selected={BrandName == "Samsung" ? "selected" : false}
+							selected={
+								BrandName == "Samsung" ? "selected" : false
+							}
 							value="Samsung"
 						>
 							Samsung
@@ -107,7 +116,9 @@ const UpdateProduct = () => {
 							Sony
 						</option>
 						<option
-							selected={BrandName == "Google" ? "selected" : false}
+							selected={
+								BrandName == "Google" ? "selected" : false
+							}
 							value="Google"
 						>
 							Google
@@ -130,7 +141,7 @@ const UpdateProduct = () => {
 
 					<input
 						type="Text"
-						name="Price"
+						name="Type"
 						placeholder="Product Type"
 						className="input input-bordered w-full"
 						defaultValue={Type}
@@ -153,11 +164,36 @@ const UpdateProduct = () => {
 						className="select select-ghost w-full input-bordered"
 						id="RatingSelect"
 					>
-						<option selected={ProductRating == 1 ? "selected" : false}  value="1">1 star</option>
-						<option selected={ProductRating == 2 ? "selected" : false}  value="2">2 star</option>
-						<option selected={ProductRating == 3 ? "selected" : false}  value="3">3 star</option>
-						<option selected={ProductRating == 4 ? "selected" : false}  value="4">4 star</option>
-						<option selected={ProductRating == 5 ? "selected" : false}  value="5">5 star</option>
+						<option
+							selected={ProductRating == 1 ? "selected" : false}
+							value="1"
+						>
+							1 star
+						</option>
+						<option
+							selected={ProductRating == 2 ? "selected" : false}
+							value="2"
+						>
+							2 star
+						</option>
+						<option
+							selected={ProductRating == 3 ? "selected" : false}
+							value="3"
+						>
+							3 star
+						</option>
+						<option
+							selected={ProductRating == 4 ? "selected" : false}
+							value="4"
+						>
+							4 star
+						</option>
+						<option
+							selected={ProductRating == 5 ? "selected" : false}
+							value="5"
+						>
+							5 star
+						</option>
 					</select>
 					{/* <h1>product Rating:</h1> */}
 				</div>
