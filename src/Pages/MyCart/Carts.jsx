@@ -7,7 +7,7 @@ const Carts = () => {
     const [product , setProduct ] = useState([])
     
     useEffect(() =>{
-        fetch(`http://localhost:5144/Cart`)
+        fetch(`https://techcommerce-server-e7p8chb3l-mustafiz82.vercel.app/Cart`)
         .then(res => res.json())
         .then(data => setProduct(data))
 

@@ -21,7 +21,7 @@ const UpdateProduct = () => {
 	console.log(Rating);
 
 	useEffect(() => {
-		fetch(`http://localhost:5144/products/${id}`)
+		fetch(`https://techcommerce-server-e7p8chb3l-mustafiz82.vercel.app/products/${id}`)
 			.then((res) => res.json())
 			.then((data) => setProduct(data));
 	}, []);
@@ -48,7 +48,7 @@ const UpdateProduct = () => {
 		};
 		console.log(formData);
 
-		fetch(`http://localhost:5144/products/${id}`, {
+		fetch(`https://techcommerce-server-e7p8chb3l-mustafiz82.vercel.app/products/${id}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",

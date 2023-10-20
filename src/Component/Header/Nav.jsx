@@ -12,21 +12,7 @@ const Nav = () => {
 	};
 	const ul = (
 		<div className="flex gap-5">
-			{/* <Link to="/">
-				<li>Home</li>
-			</Link>
-			<Link to="/AddProduct">
-				<li>Add Product</li>
-			</Link>
-			<Link to="/cart">
-				<li>My Cart</li>
-			</Link>
-			<Link to="/login">
-				<li>Login</li>
-			</Link>
-			<Link to="/Registration">
-				<li>Registration</li>
-			</Link> */}
+			
 
 			<li>
 				<NavLink

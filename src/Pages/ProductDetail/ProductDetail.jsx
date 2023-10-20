@@ -9,7 +9,7 @@ const ProductDetail = () => {
     const {ProductName ,BrandName , ProductRating ,Price, ShortDescription , Type ,imageUrl ,_id } = product;
     
     useEffect(() => {
-        fetch(`http://localhost:5144/products/${id}`)
+        fetch(`https://techcommerce-server-e7p8chb3l-mustafiz82.vercel.app/products/${id}`)
         .then(res => res.json())
         .then(data => setProduct(data))
     },[])
@@ -17,7 +17,7 @@ const ProductDetail = () => {
     const handleClick = () => {
         console.log("hello world");
 
-        fetch("http://localhost:5144/Cart", {
+        fetch("https://techcommerce-server-e7p8chb3l-mustafiz82.vercel.app/Cart", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

@@ -23,7 +23,7 @@ const AddProduct = () => {
 		};
 		console.log(formData);
 
-		fetch("http://localhost:5144/products", {
+		fetch("https://techcommerce-server-e7p8chb3l-mustafiz82.vercel.app/products", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
