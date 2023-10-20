@@ -1,11 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../../assets/logo.jpg"
+import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/logo.jpg";
+import { AuthContext } from "../../Context/Context";
 
 const Nav = () => {
+	const { user, logOut } = useContext(AuthContext);
+	console.log(user);
+
+	const handleLogOut = () => {
+		logOut();
+	};
 	const ul = (
 		<div className="flex gap-5">
-			<Link to="/">
+			{/* <Link to="/">
 				<li>Home</li>
 			</Link>
 			<Link to="/AddProduct">
@@ -19,7 +26,48 @@ const Nav = () => {
 			</Link>
 			<Link to="/Registration">
 				<li>Registration</li>
-			</Link>
+			</Link> */}
+
+			<li>
+				<NavLink
+					to="/"
+					className={({ isActive, isPending }) =>
+						isPending ? "pending" : isActive ? "text-pink " : ""
+					}
+				>
+					Home
+				</NavLink>
+			</li>
+			<li>
+				<NavLink
+					to="/AddProduct"
+					className={({ isActive, isPending }) =>
+						isPending ? "pending" : isActive ? "text-pink " : ""
+					}
+				>
+					Add Product
+				</NavLink>
+			</li>
+			<li>
+				<NavLink
+					to="/cart"
+					className={({ isActive, isPending }) =>
+						isPending ? "pending" : isActive ? "text-pink " : ""
+					}
+				>
+					My Cart
+				</NavLink>
+			</li>
+			<li>
+				<NavLink
+					to="/Registration"
+					className={({ isActive, isPending }) =>
+						isPending ? "pending" : isActive ? "text-pink " : ""
+					}
+				>
+					Registration
+				</NavLink>
+			</li>
 		</div>
 	);
 	return (
@@ -54,15 +102,44 @@ const Nav = () => {
 						</ul>
 					</div>
 					<div className="flex items-center ">
-            <img src={logo} className="w-10 h-10" alt="" />
-            <a className="btn btn-ghost normal-case text-xl">TechCommerce</a>
-          </div>
+						<img
+							src={logo}
+							className="w-10 h-10"
+							alt=""
+						/>
+						<a className="btn btn-ghost normal-case text-xl">
+							TechCommerce
+						</a>
+					</div>
 				</div>
 				<div className="navbar-center hidden lg:flex">
 					<ul className="menu menu-horizontal px-1">{ul}</ul>
 				</div>
 				<div className="navbar-end">
-					<a className="btn">Button</a>
+					{!user ? (
+						<Link
+							to="/login"
+							className="btn btn-secondery text-white"
+						>
+							Login
+						</Link>
+					) : (
+						<div className="flex gap-2 items-center">
+							{/* {
+								user.photoURL ? <img className="w-10 h-10 rounded-full"
+								src={user.photoURL }
+								alt="" 
+							/> : <CgProfile size={40}></CgProfile>
+							} */}
+							<p>{user.displayName}</p>
+							<button
+								className="btn btn-secondary text-white"
+								onClick={handleLogOut}
+							>
+								LOgOUt{" "}
+							</button>
+						</div>
+					)}
 				</div>
 			</div>
 		</div>

@@ -5,7 +5,7 @@ import { AuthContext } from "../../Context/Context";
 const Registration = () => {
 	const [error, setError] = useState("");
 
-    const {EmailSignUp , profile} = useContext(AuthContext)
+    const {EmailSignUp , profile , GoogleSignIn} = useContext(AuthContext)
     // console.log(EmailSignUp);
 
 	const handleSubmit = (e) => {
@@ -36,6 +36,15 @@ const Registration = () => {
             .catch(error => setError(error.message))
 		}
 	};
+
+    const handleGoogelLogin = () => {
+       GoogleSignIn()
+       .then(result => {
+        const user = result.user
+        console.log(user);
+    })
+    .catch(error => setError(error.message))
+    }
 
 	return (
 		<div>
@@ -97,6 +106,14 @@ const Registration = () => {
 									className="btn btn-primary"
 								>
 									Registration
+								</button>
+							</div>
+							<div className="form-control mt-6">
+								<button onClick={handleGoogelLogin}
+									
+									className="btn btn-primary"
+								>
+									Cohntinue with google
 								</button>
 							</div>
 							<div className="form-control mt-6">

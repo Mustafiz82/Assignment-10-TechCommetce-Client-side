@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/Context';
 
 const Login = () => {
-    const {EmailSignIn} = useContext(AuthContext)
+    const {EmailSignIn , GoogleSignIn} = useContext(AuthContext)
     const [error , setError] = useState("")
 
 
@@ -22,7 +22,16 @@ const Login = () => {
         })
         .catch(error => setError(error.message))
 
+       
     }
+    const handleGoogelLogin = () => {
+        GoogleSignIn()
+        .then(result => {
+         const user = result.user
+         console.log(user);
+     })
+     .catch(error => setError(error.message))
+     }
 
     return (
         <div>
@@ -67,6 +76,15 @@ const Login = () => {
 							<div className="form-control mt-6">
 								<button type="submit" className="btn btn-primary">
 									Login
+								</button>
+                                
+							</div>
+                            <div className="form-control mt-6">
+								<button onClick={handleGoogelLogin}
+									
+									className="btn btn-primary"
+								>
+									Cohntinue with google
 								</button>
 							</div>
 							<div className="form-control mt-6">
