@@ -8,14 +8,22 @@ import fullStar from "../../assets/2184494.png";
 const Cart = ({item}) => {
     const {ProductName ,BrandName , ProductRating ,Price, ShortDescription , Type ,imageUrl ,_id } = item;
 
-    const [product , setProduct ] = useState([])
-    
-    useEffect(() =>{
-        fetch(`http://localhost:5144/Cart`)
-        .then(res => res.json())
-        .then(data => setProduct(data))
 
-    },[])
+    const handleDelete = () =>{
+        fetch(`http://localhost:5144/Card/${_id}` ,{
+            method : "DELETE"
+      
+      
+          })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data );
+           
+          })
+    }
+
+
+
 
     return (
         <div>
@@ -58,7 +66,7 @@ const Cart = ({item}) => {
                 <p>price : ${Price}</p>
                     </div>
                     <div className="flex gap-5">
-                        <button className="btn w-full  btn-primary"> Remove from cart</button>
+                        <button onClick={handleDelete} className="btn w-full  btn-primary"> Remove from cart</button>
                     </div>
 					
 				</div>

@@ -12,11 +12,11 @@ const Products = () => {
         .then(data => setProduct(data))
 
     },[])
+    const filteredProducted = product.filter(item => item.BrandName == Name) 
 
     // const {Name} = useParams()
-    console.log(Name);
-    const filteredProducted = product.filter(item => item.BrandName == Name) 
-    console.log(filteredProducted);
+    // console.log(Name);
+    // console.log(filteredProducted);
     return (
         <div className='grid grid-cols-4 gap-5'>
             {
