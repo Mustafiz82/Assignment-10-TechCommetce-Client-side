@@ -9,6 +9,7 @@ import ProductDetail from "../Pages/ProductDetail/ProductDetail";
 import UpdateProduct from "../MainLayout/UpdateProduct/UpdateProduct";
 import Carts from "../Pages/MyCart/Carts";
 import Registration from "../Pages/Registration/Registration";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
 	{
@@ -26,7 +27,7 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: "/cart",
-				element: <Carts></Carts>
+				element: <PrivateRoute><Carts></Carts></PrivateRoute>
 			},
 			{
 				path: "/login",
@@ -42,7 +43,7 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: "/:Name/:id",
-				element: <ProductDetail></ProductDetail>,
+				element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>
 			},
 			{
 				path: "/:Name/update/:id",

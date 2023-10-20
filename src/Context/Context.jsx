@@ -5,11 +5,14 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmail
 
 
 export const AuthContext = createContext(null)
+
 const auth = getAuth(app);
 
 
 const Context = ({children}) => {
     const [user , setUser] = useState(null)
+    
+    const [loading , setLoading] = useState(true)
 
     
 
@@ -44,6 +47,7 @@ const Context = ({children}) => {
 		const unSubscribe = onAuthStateChanged(auth, (CurrentUser) => {
 			setUser(CurrentUser);
             console.log(CurrentUser);
+            setLoading(false)
             // setLoading(false)
 
 		});
@@ -52,7 +56,7 @@ const Context = ({children}) => {
 
 
     const obj = {
-        user , EmailSignUp , profile ,EmailSignIn ,GoogleSignIn , logOut
+        user , EmailSignUp , profile ,EmailSignIn ,GoogleSignIn , logOut ,loading
 	};
 
     return <AuthContext.Provider value={obj}>{children}</AuthContext.Provider>
