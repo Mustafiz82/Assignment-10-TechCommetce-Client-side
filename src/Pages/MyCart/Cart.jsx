@@ -10,7 +10,7 @@ const Cart = ({item}) => {
 
 
     const handleDelete = () =>{
-        fetch(`https://techcommerce-server-e7p8chb3l-mustafiz82.vercel.app/Card/${_id}` ,{
+        fetch(`https://techcommerce-server.vercel.app/Card/${_id}` ,{
             method : "DELETE"
       
       

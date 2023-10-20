@@ -11,13 +11,13 @@ const Product = ({ item }) => {
 	return (
 		<div>
 			<div className="card  bg-base-100 shadow-xl">
-				<figure>
+				<div className="w-40 mx-auto pt-5 h-40 flex justify-center items-center">
 					<img
 						src={imageUrl}
 						alt="Shoes"
-                        className="w-40 h-40 object-cover"
+                        className="w-full object-cover"
 					/>
-				</figure>
+				</div>
 				<div className="card-body">
 					<h2 className="card-title">
 						{ProductName}

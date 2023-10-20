@@ -23,7 +23,7 @@ const AddProduct = () => {
 		};
 		console.log(formData);
 
-		fetch("https://techcommerce-server-e7p8chb3l-mustafiz82.vercel.app/products", {
+		fetch("https://techcommerce-server.vercel.app/products", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -34,7 +34,13 @@ const AddProduct = () => {
 			.then((data) => console.log(data));
 	};
 	return (
-		<div className="w-1/2 mx-auto">
+		<div className="bg-gray-200">
+			<div>
+				<h1 className="text-4xl text-center p-5">Add Product</h1>
+			</div>
+
+	
+			<div className="w-1/2 mx-auto bg-white px-5 pt-5 ">
 			<form
 				onSubmit={handleSubmit}
 				className="form-control "
@@ -78,7 +84,7 @@ const AddProduct = () => {
 						className="input input-bordered w-full"
 					/>
 
-					<span>Price</span>
+					<span>Price $</span>
 					<input
 						type="Number"
 						name="Price"
@@ -111,12 +117,13 @@ const AddProduct = () => {
 				></textarea>
 
 				<button
-					className="btn"
+					className="btn mt-5"
 					type="submit"
 				>
 					Add Product
 				</button>
 			</form>
+		</div>
 		</div>
 	);
 };
