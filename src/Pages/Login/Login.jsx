@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/Context';
 
 const Login = () => {
     const {EmailSignIn} = useContext(AuthContext)
+    const [error , setError] = useState("")
 
 
 
@@ -15,6 +16,11 @@ const Login = () => {
         console.log( Email , Pass )
 
         EmailSignIn(Email , Pass )
+        .then(result => {
+            const user = result.user
+            console.log(user);
+        })
+        .catch(error => setError(error.message))
 
     }
 
@@ -54,6 +60,8 @@ const Login = () => {
 									required
                                     name="Pass"
 								/>
+
+                                <p className='text-red-500'>{error}</p>
 							
 							</div>
 							<div className="form-control mt-6">
