@@ -105,7 +105,7 @@ const Nav = () => {
 					{!user ? (
 						<Link
 							to="/login"
-							className="btn btn-secondery text-white"
+							className="btn btn-primary text-white"
 						>
 							Login
 						</Link>
@@ -119,7 +119,7 @@ const Nav = () => {
 							} */}
 							<p>{user.displayName}</p>
 							<button
-								className="btn btn-secondary text-white"
+								className="btn btn-primary text-white"
 								onClick={handleLogOut}
 							>
 								LOgOUt{" "}
