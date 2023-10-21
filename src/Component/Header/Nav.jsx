@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
 import { AuthContext } from "../../Context/Context";
+import profile from '../../assets/profile.jpg'
 
 const Nav = () => {
 	const { user, logOut } = useContext(AuthContext);
@@ -11,24 +12,16 @@ const Nav = () => {
 		logOut();
 	};
 	const ul = (
-		<div className="flex gap-5">
-			
-
-			<div>
-				<NavLink
-					to="/"
-					className={({ isActive, isPending }) =>
-						isPending ? "pending" : isActive ? "btn  text-primary" : "btn bg-transparent border-none font-normal"
-					}
-				>
-					Home
-				</NavLink>
-			</div>
+		<div className="flex ">
 			<div>
 				<NavLink
 					to="/AddProduct"
 					className={({ isActive, isPending }) =>
-						isPending ? "btn bg-red" : isActive ? "btn  text-primary" : "btn bg-transparent font-normal border-none"
+						isPending
+							? "btn bg-red"
+							: isActive
+							? "btn  text-primary"
+							: "btn bg-transparent font-normal border-none"
 					}
 				>
 					Add Product
@@ -38,7 +31,11 @@ const Nav = () => {
 				<NavLink
 					to="/cart"
 					className={({ isActive, isPending }) =>
-						isPending ? "" : isActive ? "btn text-primary" : "btn bg-transparent border-none font-normal"
+						isPending
+							? ""
+							: isActive
+							? "btn text-primary"
+							: "btn bg-transparent border-none font-normal"
 					}
 				>
 					My Cart
@@ -48,7 +45,11 @@ const Nav = () => {
 				<NavLink
 					to="/Registration"
 					className={({ isActive, isPending }) =>
-						isPending ? "pending" : isActive ? "btn  text-primary" : "btn bg-transparent border-none font-normal"
+						isPending
+							? "pending"
+							: isActive
+							? "btn  text-primary"
+							: "btn bg-transparent border-none font-normal"
 					}
 				>
 					Registration
@@ -93,9 +94,12 @@ const Nav = () => {
 							className="w-10 h-10"
 							alt=""
 						/>
-						<a className="btn btn-ghost normal-case text-xl">
+						<NavLink
+							to="/"
+							className="btn btn-ghost normal-case text-xl"
+						>
 							TechCommerce
-						</a>
+						</NavLink>
 					</div>
 				</div>
 				<div className="navbar-center hidden lg:flex">
@@ -111,12 +115,23 @@ const Nav = () => {
 						</Link>
 					) : (
 						<div className="flex gap-2 items-center">
-							{/* {
-								user.photoURL ? <img className="w-10 h-10 rounded-full"
-								src={user.photoURL }
-								alt="" 
-							/> : <CgProfile size={40}></CgProfile>
-							} */}
+							{user.photoURL ? (
+								<img
+									className="w-10 h-10 rounded-full"
+									src={user.photoURL}
+									alt=""
+								/>
+							) : (
+								<div className="avatar">
+									<div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+										<img src={profile} alt="" srcset="" />
+									</div>
+								</div>
+								
+
+
+
+							)}
 							<p>{user.displayName}</p>
 							<button
 								className="btn btn-primary text-white"

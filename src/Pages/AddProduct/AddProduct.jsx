@@ -1,4 +1,5 @@
 import React from "react";
+import "../../App.css"
 
 const AddProduct = () => {
 	const handleSubmit = (e) => {
@@ -34,13 +35,13 @@ const AddProduct = () => {
 			.then((data) => console.log(data));
 	};
 	return (
-		<div className="bg-gray-200">
-			<div>
-				<h1 className="text-4xl text-center p-5">Add Product</h1>
-			</div>
+		<div className="bg-image p-10 ">
 
 	
 			<div className="w-1/2 mx-auto bg-white px-5 pt-5 ">
+			<div>
+				<h1 className="text-4xl text-center text-blue-400 ">Add Product</h1>
+			</div>
 			<form
 				onSubmit={handleSubmit}
 				className="form-control "
@@ -117,7 +118,7 @@ const AddProduct = () => {
 				></textarea>
 
 				<button
-					className="btn mt-5"
+					className="btn btn-primary my-5"
 					type="submit"
 				>
 					Add Product

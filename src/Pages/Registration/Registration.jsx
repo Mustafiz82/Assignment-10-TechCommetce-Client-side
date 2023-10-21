@@ -3,10 +3,23 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/Context";
 import '../../App.css';
 import image from '../../assets/5196871.jpg'
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+
+import { AiOutlineEye } from "react-icons/ai";
+import { AiOutlineEyeInvisible } from "react-icons/ai";
+
+// import { useNavigate } from "react-router-dom";
 
 
 const Registration = () => {
 	const [error, setError] = useState("");
+	const navigate = useNavigate();
+	const [Eye, setEye] = useState(false);
+
+	const handleEye = () => {
+		setEye(!Eye);
+	};
 
     const {EmailSignUp , profile , GoogleSignIn} = useContext(AuthContext)
     // console.log(EmailSignUp);
@@ -18,7 +31,7 @@ const Registration = () => {
 		const Pass = e.target.Pass.value;
 
 		const patternPass =
-			/^(?=.*[A-Z])(?=.*[!@#$%^&*()_+~\-=/\\{}\[\]|;:'",.<>?`]).{6,}$/;
+		/^(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}$/;
 		const isValidPass = patternPass.test(Pass);
 
 		if (!isValidPass) {
@@ -35,6 +48,13 @@ const Registration = () => {
 						.then()
 						.catch((error) => setError(error));
                 console.log(user);
+				Swal.fire(
+					'Rgestration Successfull!',
+					``,
+					'success'
+				  )
+				navigate('/')
+				
             })
             .catch(error => setError(error.message))
 		}
@@ -92,16 +112,31 @@ const Registration = () => {
 									<span className="label-text">Password</span>
 								</label>
 
-								<input
-									type="password"
-									placeholder="password"
-									className="input input-bordered"
-									required
-									name="Pass"
-								/>
+								<div className="relative flex ">
+									<input
+										type={Eye ?   "text": "password"}
+										placeholder="password"
+										className="input w-full input-bordered"
+										required
+										name="Pass"
+									/>
+									<div onClick={handleEye} className="absolute right-5 top-3">
+										{Eye ? (
+											<AiOutlineEye
+												size={28}
+											></AiOutlineEye>
+										) : (
+											<AiOutlineEyeInvisible
+												size={28}
+											></AiOutlineEyeInvisible>
+										)}
+									</div>
+								</div>
+
+								<p className="text-red-500 mt-6">{error}</p>
 							</div>
                             <div>
-                                <p>{error}</p>
+                                <p className="text-red-600">{error}</p>
                             </div>
 							<div className="form-control mt-6">
 								<button

@@ -8,6 +8,10 @@ import fullStar from "../../assets/2184494.png";
 const Cart = ({item}) => {
     const {ProductName ,BrandName , ProductRating ,Price, ShortDescription , Type ,imageUrl ,_id } = item;
 
+	const [isItem ,setItem] = useState(false)
+
+	
+
 
     const handleDelete = () =>{
         fetch(`https://techcommerce-server.vercel.app/Card/${_id}` ,{
@@ -18,6 +22,7 @@ const Cart = ({item}) => {
           .then(res => res.json())
           .then(data => {
             console.log(data );
+			setItem(true)
            
           })
     }
@@ -26,7 +31,7 @@ const Cart = ({item}) => {
 
 
     return (
-        <div>
+        <div className={isItem && "hidden"}>
             <div>
 			<div className="card  bg-base-100 shadow-xl">
 				<figure>

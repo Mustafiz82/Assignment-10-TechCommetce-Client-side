@@ -6,10 +6,10 @@ import Login from "../Pages/Login/Login";
 import Products from "../Pages/Products/Products";
 import Home from "../Pages/Home/Home";
 import ProductDetail from "../Pages/ProductDetail/ProductDetail";
-import UpdateProduct from "../MainLayout/UpdateProduct/UpdateProduct";
 import Carts from "../Pages/MyCart/Carts";
 import Registration from "../Pages/Registration/Registration";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 
 export const router = createBrowserRouter([
 	{
