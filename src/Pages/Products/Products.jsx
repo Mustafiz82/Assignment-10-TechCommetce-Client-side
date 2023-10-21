@@ -14,14 +14,11 @@ const Products = () => {
 	}, []);
 	const filteredProducted = product.filter((item) => item.BrandName == Name);
 
-	// const {Name} = useParams()
-	// console.log(Name);
-	// console.log(filteredProducted);
 	return (
 		<div>
 
             <Advertisement></Advertisement>
-			<div className="grid grid-cols-4 gap-5">
+			<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
 				{filteredProducted.map((item) => (
 					<Product
 						item={item}

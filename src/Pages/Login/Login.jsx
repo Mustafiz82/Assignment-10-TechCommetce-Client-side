@@ -43,9 +43,9 @@ const Login = () => {
 	};
 
 	return (
-		<div className="bg-image p-20">
+		<div className="bg-image md:p-20">
 			<div className={`  bg-white	  bg-no-repeat`}>
-				<div className="grid grid-cols-2 ">
+				<div className="grid md:grid-cols-2 ">
 					<div className="text-center lg:text-left">
 						<img
 							src={image}

@@ -10,7 +10,7 @@ const Product = ({ item }) => {
     const {ProductName ,BrandName , ProductRating ,Price, ShortDescription , Type ,imageUrl ,_id } = item;
 	return (
 		<div>
-			<div className="card  bg-base-100 shadow-xl">
+			<div className="card text-center  bg-base-100 shadow-xl">
 				<div className="w-40 mx-auto pt-5 h-40 flex justify-center items-center">
 					<img
 						src={imageUrl}
@@ -18,11 +18,11 @@ const Product = ({ item }) => {
                         className="w-full object-cover"
 					/>
 				</div>
-				<div className="card-body">
-					<h2 className="card-title">
+				<div className="card-body  space-y-5">
+					<h2 className="card-title justify-center">
 						{ProductName}
 					</h2>
-                    <div className="card-actions justify-left">
+                    <div className="card-actions justify-center">
 						<div className="badge badge-outline">{BrandName}</div>
 						<div className="badge badge-outline">{Type}</div>
 					</div>
@@ -47,7 +47,7 @@ const Product = ({ item }) => {
 				/>
                 <p>price : ${Price}</p>
                     </div>
-                    <div className="flex gap-5">
+                    <div className="flex justify-center gap-5">
                         <Link to={`${_id}`}><button className="btn flex-1 btn-primary"> Details</button></Link>
                         <Link to={`update/${_id}`}><button className="btn flex-1 btn-primary"> Update</button></Link>
                     </div>

@@ -83,7 +83,7 @@ const UpdateProduct = () => {
 			<div className="bg-image p-5">
 				<form
 					onSubmit={handleSubmit}
-					className="form-control space-y-4 bg-white mt-5 p-5 w-1/2 m-auto  "
+					className="form-control space-y-4 bg-white mt-5 p-5 md:w-1/2 m-auto  "
 				>
 					<h1 className="text-2xl text-center text-blue-400">Update Product</h1>
 					<div className="grid gap-4">

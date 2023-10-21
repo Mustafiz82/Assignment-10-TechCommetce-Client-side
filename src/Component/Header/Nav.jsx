@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
 import { AuthContext } from "../../Context/Context";
-import profile from '../../assets/profile.jpg'
+import profile from "../../assets/profile.jpg";
 
 const Nav = () => {
 	const { user, logOut } = useContext(AuthContext);
@@ -12,8 +12,8 @@ const Nav = () => {
 		logOut();
 	};
 	const ul = (
-		<div className="flex ">
-			<div>
+		<div className=" flex flex-col lg:flex-row  ">
+			<div className="w-full ">
 				<NavLink
 					to="/AddProduct"
 					className={({ isActive, isPending }) =>
@@ -82,8 +82,7 @@ const Nav = () => {
 							</svg>
 						</label>
 						<ul
-							tabIndex={0}
-							className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+							className="flex  dropdown-content  mt-3 z-[1] p-2 shadow bg-base-100 rounded-box "
 						>
 							{ul}
 						</ul>
@@ -114,8 +113,14 @@ const Nav = () => {
 							Login
 						</Link>
 					) : (
-						<div className="flex gap-2 items-center">
-							{user.photoURL ? (
+
+						<div className="dropdown dropdown-end">
+							<label
+								tabIndex={0}
+								className="btn btn-ghost btn-circle avatar"
+							>
+								<div className="w-10 rounded-full">
+								{user.photoURL ? (
 								<img
 									className="w-10 h-10 rounded-full"
 									src={user.photoURL}
@@ -127,18 +132,29 @@ const Nav = () => {
 										<img src={profile} alt="" srcset="" />
 									</div>
 								</div>
-								
-
-
+							
 
 							)}
-							<p>{user.displayName}</p>
-							<button
-								className="btn btn-primary text-white"
-								onClick={handleLogOut}
+								</div>
+							</label>
+							<ul
+								tabIndex={0}
+								className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-60"
 							>
-								LOgOUt{" "}
-							</button>
+								<li >
+									<a className="text-xl justify-center mb-5">
+									{user.displayName}
+									</a>
+								</li>
+								<div>
+								<button
+									className="btn btn-primary w-full text-white"
+									onClick={handleLogOut}
+								>
+									LOgOUt{" "}
+								</button>
+								</div>
+							</ul>
 						</div>
 					)}
 				</div>

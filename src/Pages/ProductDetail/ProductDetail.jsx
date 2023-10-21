@@ -55,30 +55,19 @@ const ProductDetail = () => {
                       )
                 }
 			});
-
-		// .then((data) => {
-		//     console.log(data);
-		    // if(data.acknowledged){
-		    //     Swal.fire(
-		    //         'Successfull',
-		    //         'Product added to cart',
-		    //         'success'
-		    //       )
-		    // }
-		// })
 	};
 
 	return (
 		<div>
-			<div className="flex ">
-				<div className="w-1/2 px-20 py-10 ">
+			<div className="flex flex-col md:flex-row text-center md:text-left">
+				<div className="md:marker:w-1/2 px-20 py-10 ">
 					<img
 						src={imageUrl}
 						className="w-full h-full"
 						alt=""
 					/>
 				</div>
-				<div className="w-1/2 flex items-center">
+				<div className="md:w-1/2 flex items-center">
 					<div className="space-y-3">
 						<h1 className="text-3xl font-semibold ">
 							{ProductName}

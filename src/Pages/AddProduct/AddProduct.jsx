@@ -38,7 +38,7 @@ const AddProduct = () => {
 		<div className="bg-image p-10 ">
 
 	
-			<div className="w-1/2 mx-auto bg-white px-5 pt-5 ">
+			<div className="md:w-1/2 mx-auto bg-white px-5 pt-5 ">
 			<div>
 				<h1 className="text-4xl text-center text-blue-400 ">Add Product</h1>
 			</div>
