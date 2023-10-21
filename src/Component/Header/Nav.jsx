@@ -14,46 +14,46 @@ const Nav = () => {
 		<div className="flex gap-5">
 			
 
-			<li>
+			<div>
 				<NavLink
 					to="/"
 					className={({ isActive, isPending }) =>
-						isPending ? "pending" : isActive ? "text-pink " : ""
+						isPending ? "pending" : isActive ? "btn  text-primary" : "btn bg-transparent border-none font-normal"
 					}
 				>
 					Home
 				</NavLink>
-			</li>
-			<li>
+			</div>
+			<div>
 				<NavLink
 					to="/AddProduct"
 					className={({ isActive, isPending }) =>
-						isPending ? "pending" : isActive ? "text-pink " : ""
+						isPending ? "btn bg-red" : isActive ? "btn  text-primary" : "btn bg-transparent font-normal border-none"
 					}
 				>
 					Add Product
 				</NavLink>
-			</li>
-			<li>
+			</div>
+			<div>
 				<NavLink
 					to="/cart"
 					className={({ isActive, isPending }) =>
-						isPending ? "pending" : isActive ? "text-pink " : ""
+						isPending ? "" : isActive ? "btn text-primary" : "btn bg-transparent border-none font-normal"
 					}
 				>
 					My Cart
 				</NavLink>
-			</li>
-			<li>
+			</div>
+			<div>
 				<NavLink
 					to="/Registration"
 					className={({ isActive, isPending }) =>
-						isPending ? "pending" : isActive ? "text-pink " : ""
+						isPending ? "pending" : isActive ? "btn  text-primary" : "btn bg-transparent border-none font-normal"
 					}
 				>
 					Registration
 				</NavLink>
-			</li>
+			</div>
 		</div>
 	);
 	return (

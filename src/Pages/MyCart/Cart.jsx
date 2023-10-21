@@ -33,7 +33,7 @@ const Cart = ({item}) => {
 					<img
 						src={imageUrl}
 						alt="Shoes"
-                        className="w-40 h-40 object-cover"
+                        className="w-40 h-40 mt-10 object-cover"
 					/>
 				</figure>
 				<div className="card-body">

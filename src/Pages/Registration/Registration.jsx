@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/Context";
+import '../../App.css';
+import image from '../../assets/5196871.jpg'
+
 
 const Registration = () => {
 	const [error, setError] = useState("");
@@ -47,19 +50,19 @@ const Registration = () => {
     }
 
 	return (
-		<div>
-			<div className="hero min-h-screen bg-base-200">
-				<div className="hero-content flex-col lg:flex-row-reverse">
-					<div className="text-center lg:text-left">
-						<h1 className="text-5xl font-bold">
-							Registration now!
-						</h1>
+		<div className="bg-image p-20">
+			<div  className={`  bg-white	  bg-no-repeat`} >
+				<div  className="grid grid-cols-2 ">
+				<div className="text-center lg:text-left">
+						<img src={image} className='h-[500px] ' alt="" />
+						
 					</div>
-					<div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+					<div className="card flex-shrink-0 mx-auto w-full max-w-sm shadow-2xl bg-base-100">
 						<form
 							onSubmit={handleSubmit}
 							className="card-body"
 						>
+							<h1 className="text-2xl text-center"> Please Register</h1>
 							<div className="form-control">
 								<label className="label">
 									<span className="label-text">Name</span>
@@ -108,7 +111,7 @@ const Registration = () => {
 									Registration
 								</button>
 							</div>
-							<div className="form-control mt-6">
+							<div className="form-control mt-2">
 								<button onClick={handleGoogelLogin}
 									
 									className="btn btn-primary"
@@ -119,7 +122,7 @@ const Registration = () => {
 							<div className="form-control mt-6">
 								<h1>
 									Already have an accoutn ?{" "}
-									<Link to="/login">Sign in</Link>
+									<Link className="font-bold py-4" to="/login">Sign in</Link>
 								</h1>
 							</div>
 						</form>
